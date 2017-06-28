@@ -13,7 +13,7 @@ words = {
 movies = {
   :Shawshank => 2010,
   :Avatar => 2000,
-  :Inception => 2010
+  :Inception => 2010,
 }
 
 cities = {
@@ -55,20 +55,72 @@ movies.each do |k, v|
 end
 ages = ages.sort.reverse
 p ages
-movies[:"Beauty and the Beast"] = "1991 and 2017"
+movies[:"Beauty and the Beast"] = 1991, 2017
 p movies[:"Beauty and the Beast"]
 
 # EXERCISE 4
 
-ages_under_30 = ages.keep_if do |v|
-  v < 30
- end
-p ages_under_30
+# ages_under_30 = ages.keep_if do |v|
+  # v < 30
+ # end
+# p ages_under_30
 
-oldest_age = ages.max
-p oldest_age
+# oldest_age = ages.max
+# p oldest_age
 
 p coin_flips.count("yes")
 
 performing_artists.delete("james")
 p performing_artists
+
+cities[:Toronto] = 7000000
+p cities
+
+# EXERCISE 5
+
+puts cities.values.sum
+
+names.each do |k, v|
+  if v < 19
+    puts "#{k} is young"
+  else
+    puts "#{k} is old"
+  end
+end
+
+p fav_colours.last(2)
+
+fav_colours << "purple"
+fav_colours << "black"
+p fav_colours
+
+# EXERCISE 6
+
+new_movies = {
+  1999 => ["The Martix", "Star Wars", "The Mummy"],
+  2009 => ["Avatar", "Star Trek", "District 9"],
+  2019 => ["How to Train Your Dragon 3", "Toy Story 4", "Star Wars: Episode 9"],
+}
+
+phone_buttons = {
+  :row1 => [1, 2, 3],
+  :row2 => [4, 5, 6],
+  :row3 => [7, 8, 9],
+  :row4 => ['*', 0, '#']
+}
+
+def countries
+  britain = { :name => "Great Britain", :continent => "Europe", :island => true},
+  canada = { :name => "Canada", :continent => "North America", :island => false},
+  france = { :name => "France", :continent => "Europe", :island => false}
+end
+
+p countries
+
+puts ["I will not skateboard in the halls"].cycle(20).to_a.join(' ')
+
+num = (1..50).to_a
+
+p num.each.sum
+
+ 
