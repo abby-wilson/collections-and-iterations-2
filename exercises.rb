@@ -90,6 +90,7 @@ end
 
 p fav_colours.last(2)
 
+
 fav_colours << "purple"
 fav_colours << "black"
 p fav_colours
@@ -123,4 +124,13 @@ num = (1..50).to_a
 
 p num.each.sum
 
- 
+notislands = []
+
+
+notislands = country_locations.select do |country_location|
+  country_location[:island] == false
+end
+
+
+puts notislands
+puts country_locations
